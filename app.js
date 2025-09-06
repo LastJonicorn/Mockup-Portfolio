@@ -25,7 +25,7 @@ sections.forEach((section) => {
 
 // Typing animation
 const typingElement = document.getElementById("typing");
-const typingTexts = ["a Web Developer  ", "a Designer  ", "a Problem Solver  "];
+const typingTexts = ["Software & Web Developer  ", "3D & 2D Artist  ", "Game Developer  "];
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;

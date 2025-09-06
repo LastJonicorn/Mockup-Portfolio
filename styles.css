@@ -54,6 +54,16 @@ nav a:hover {
   text-align: center;
 }
 
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* min, preferred, max */
+  margin-bottom: 1rem;
+}
+
+.hero h2 {
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  min-height: 2.5rem;
+}
+
 .highlight {
   color: #ffdf5d;
 }
@@ -86,6 +96,11 @@ nav a:hover {
   transition: all 0.8s ease-out;
 }
 
+#typing {
+  display: inline-block;
+  min-height: 1.2em; /* adjust to your font size */
+}
+
 .show {
   opacity: 1;
   transform: translateY(0);
@@ -109,4 +124,27 @@ nav a:hover {
 
 .about-content p {
   margin-bottom: 1.5rem;   /* spacing between paragraphs */
+}
+
+/* Profile Pic */
+.profile-pic {
+  width: 250px;              /* adjust size */
+  height: 250px;
+  border-radius: 50%;        /* makes it circular */
+  object-fit: cover;         /* ensures image scales correctly */
+  border: 4px solid #fff;    /* nice border (use hero bg color if different) */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 1.5rem;     /* space below image */
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.profile-pic {
+  border: 4px solid transparent;
+  background: linear-gradient(45deg, #0077ff, #ffdf5d);
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
 }
