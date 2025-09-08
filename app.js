@@ -51,6 +51,43 @@ function type() {
 }
 type();
 
+function showArtGallery() {
+  document.getElementById("projects").classList.add("inactive");
+  document.getElementById("art-gallery").classList.remove("inactive");
+
+  // keep user where they are, no scroll reset
+}
+
+function hideArtGallery() {
+  document.getElementById("art-gallery").classList.add("inactive");
+  document.getElementById("projects").classList.remove("inactive");
+
+  // when going back, scroll up to the Projects header
+  document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+}
+
+const galleryImages = document.querySelectorAll(".gallery img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
+
+galleryImages.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.classList.add("active");
+    lightboxImg.src = img.src; // show clicked image
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.classList.remove("active");
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove("active");
+  }
+});
+
 // Scroll reveal animations
 const hiddenElements = document.querySelectorAll(".hidden");
 const revealObserver = new IntersectionObserver((entries) => {

@@ -23,6 +23,7 @@
         <section id="home" class="hero">
             <img src="images/ProfilePic.jpg" alt="Profile picture" class="profile-pic" />
             <h1>Hello, I’m <span class="highlight">Joni Lampela</span></h1>
+            <p class="artist-name">aka LastJonicorn</p>
             <h2><span id="typing"></span></h2>
         </section>
 
@@ -32,11 +33,11 @@
         <div class="about-content">
             <p>
             I’m a multidisciplinary developer and digital artist with a unique blend of backgrounds in business information technology and social services. 
-            Professionally, I’ve worked in the gaming industry as a 2D/3D artist, while also building a strong foundation in programming and software development.
+            Professionally, I’ve worked in the gaming industry as a <strong>2D/3D artist</strong>, while also building a strong foundation in <strong>programming and software development</strong>.
             </p>
             <p>
-            As an artist, I’m entirely self-taught, with over 15 years of experience in Blender specializing in 3D modeling and texturing. 
-            On the technical side, I work with HTML, CSS, JavaScript, React/React Native, C#, and SQL, combining creativity with solid development skills.
+            As an artist, I’m entirely self-taught, with over <strong>15 years of experience in Blender specializing in 3D modeling and texturing</strong>. 
+            On the technical side, I work with <strong>HTML, CSS, JavaScript, React/React Native, C#, and SQL</strong>, combining creativity with solid development skills.
             </p>
             <p>
             Currently, I’m focused on personal projects, including a Unity VR game and a React Native mobile app that uses an API to fetch, analyze, and display data from a database.
@@ -51,19 +52,54 @@
 
         <!-- Projects -->
         <section id="projects" class="section hidden">
-            <h2>My Work</h2>
-            <div class="projects-grid">
-            <div class="project-card">Project 1 (Image or YouTube embed)</div>
-            <div class="project-card">Project 2</div>
-            <div class="project-card">Project 3</div>
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <!-- Project cards -->
+            <div class="project-card">
+            <h3>React Native App</h3>
+            <p>Mobile app with API integration.</p>
             </div>
+
+            <div class="project-card">
+            <h3>Unity VR</h3>
+            <p>VR game made using Unity and C#.</p>
+            </div>
+
+            <div class="project-card art-project">
+            <h3>Digital Art Gallery</h3>
+            <p>Collection of my 2D and 3D artwork.</p>
+            <button type="button" onclick="showArtGallery()">View Gallery</button>
+            </div>
+        </div>
+        </section>
+
+        <section id="art-gallery" class="section hidden">
+        <h2>My Art</h2>
+        <div class="gallery">
+            <img src="images/Art1.png" alt="Artwork 1" />
+            <img src="images/Art2.png" alt="Artwork 2" />
+            <img src="images/Art3.png" alt="Artwork 3" />
+            <img src="images/Art4.png" alt="Artwork 4" />
+            <img src="images/Art5.png" alt="Artwork 5" />
+            <img src="images/Art6.png" alt="Artwork 6" />
+            <img src="images/Art7.png" alt="Artwork 7" />
+            <img src="images/Art8.png" alt="Artwork 8" />
+            <img src="images/Art9.png" alt="Artwork 9" />
+            <img src="images/Art10.png" alt="Artwork 10" />
+        </div>
+        <button type="button" onclick="hideArtGallery()">Back to Projects</button>
         </section>
 
         <!-- Contact -->
         <section id="contact" class="section hidden">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:your@email.com">email@email.com</a></p>
+            <p>Email: <a href="mailto:notarealemail@email.com">notarealemail@email.com</a></p>
         </section>
+
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-img" src="" alt="enlarged artwork" />
+        </div>
 
         <script src="app.js"></script>
     </body>

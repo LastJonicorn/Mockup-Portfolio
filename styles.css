@@ -1,4 +1,3 @@
-/* Basic Reset */
 * {
   margin: 0;
   padding: 0;
@@ -74,6 +73,33 @@ nav a:hover {
   text-align: center;
 }
 
+/* Common button style */
+button {
+  background: linear-gradient(145deg, #ffdf5d, #ffc107);
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Hover effect */
+button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Active click effect */
+button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
 /* Projects grid */
 .projects-grid {
   display: grid;
@@ -147,4 +173,107 @@ nav a:hover {
   background: linear-gradient(45deg, #0077ff, #ffdf5d);
   background-clip: padding-box, border-box;
   background-origin: border-box;
+}
+
+.name-block {
+  display: inline-block;   /* shrink to fit content */
+  text-align: center;      /* center text inside the block */
+}
+
+.artist-name {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #ffdf5d;          /* highlight color */
+  margin-top: -1.5rem;     /* pull closer to main name */
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.gallery {
+  display: grid;
+  gap: 1rem;
+  max-width: 1200px;         /* keeps gallery from being too wide on large screens */
+  margin: 0 auto;            /* centers the grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;      /* centers items in each column */
+}
+
+
+#art-gallery {
+  text-align: center;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;       /* keeps squares */
+  object-fit: cover;
+  clip-path: polygon(
+    10% 0%, 90% 0%, 100% 10%, 100% 90%,
+    90% 100%, 10% 100%, 0% 90%, 0% 10%
+  );                         /* beveled edges */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.inactive {
+  display: none !important;
+}
+
+.lightbox {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
 }
